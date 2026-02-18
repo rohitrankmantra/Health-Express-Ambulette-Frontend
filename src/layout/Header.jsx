@@ -7,7 +7,7 @@ import { MdAccessTime } from 'react-icons/md'
 import { RxCross2 } from 'react-icons/rx'
 import { IoIosArrowDown } from 'react-icons/io'
 import { setIndex } from '../store/slice/indexSlice.js';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import logo from "../assets/Logo.jpg"
 
 
@@ -38,6 +38,13 @@ const Header = () => {
         'Two Men Assist Over Stairs',
         'Medicaid Ambulette Service',
         'Wheelchair Handicapped Transportation'
+    ];
+    const dropdownSlugs = [
+        'ambulette-services',
+        'private-medical-transportation',
+        'two-men-assist-over-stairs',
+        'medicaid-ambulette-service',
+        'wheelchair-handicapped-transportation'
     ];
 
     const locationLinks = [
@@ -122,7 +129,7 @@ const Header = () => {
                         {showServicesDropdown && (
                             <div className="absolute top-full left-0 bg-white shadow-xl p-4 rounded-xl w-[300px] z-50 space-y-2">
                                 {dropdownLinks.map((item, i) => (
-                                    <Link key={i} to="/services" onClick={() => handleDropdownClick(i)} className="block px-4 py-2 text-[1vw] text-gray-700 rounded-lg hover:bg-blue-100 hover:text-[#3E52AD]">
+                                    <Link key={i} to={`/services/${dropdownSlugs[i]}`} onClick={() => handleDropdownClick(i)} className="block px-4 py-2 text-[1vw] text-gray-700 rounded-lg hover:bg-blue-100 hover:text-[#3E52AD]">
                                         {item}
                                     </Link>
                                 ))}
@@ -181,7 +188,7 @@ const Header = () => {
                                 {mobileServicesDropdown && (
                                     <div className="ml-4 mt-2 space-y-1">
                                         {dropdownLinks.map((item, i) => (
-                                            <Link key={i} to="/services" onClick={() => {
+                                            <Link key={i} to={`/services/${dropdownSlugs[i]}`} onClick={() => {
                                                 handleDropdownClick(i);
                                                 setShowMenu(false);
                                             }} className="block text-gray-600">

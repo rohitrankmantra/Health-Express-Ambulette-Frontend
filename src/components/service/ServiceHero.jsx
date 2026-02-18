@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
     FaHospitalSymbol,
     FaUserMd,
@@ -23,6 +23,7 @@ import WheelchairHandicappedTransportation2 from "../../assets/Home/WheelchairHa
 import WheelchairHandicappedTransportation3 from "../../assets/Home/WheelchairHandicappedTransportation3.jpg"
 
 import { useSelector } from "react-redux";
+import { useParams, useNavigate } from "react-router-dom";
 
 const servicesData = [
     {
@@ -58,7 +59,7 @@ Alzheimer
 Spine or Back Injuries
 Special Needs Patients
 Rehabilitation Patients
-Extremely Weak Patients`,
+Extremely Weak Patients`,
         images: [
             ambulatteService,
             ambulatteService2,
@@ -167,16 +168,40 @@ const ServiceHero = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const index = useSelector((state) => state.index.index);
+    const { slug } = useParams();
+    const navigate = useNavigate();
+    const slugs = useMemo(() => ([
+        "ambulette-services",
+        "private-medical-transportation",
+        "two-men-assist-over-stairs",
+        "medicaid-ambulette-service",
+        "wheelchair-handicapped-transportation",
+    ]), []);
+    const slugToIndex = useMemo(() => ({
+        "ambulette-services": 0,
+        "private-medical-transportation": 1,
+        "two-men-assist-over-stairs": 2,
+        "medicaid-ambulette-service": 3,
+        "wheelchair-handicapped-transportation": 4,
+    }), []);
 
     useEffect(() => {
-        if (index && !isNaN(parseInt(index))) {
+        if (!slug && Number.isInteger(index)) {
             setActiveIndex(parseInt(index));
         }
-    }, [index]);
+    }, [index, slug]);
 
     useEffect(() => {
         setSelectedImageIndex(0);
     }, [activeIndex]);
+    
+    useEffect(() => {
+        if (slug && Object.prototype.hasOwnProperty.call(slugToIndex, slug)) {
+            setActiveIndex(slugToIndex[slug]);
+        } else if (slug) {
+            setActiveIndex(0);
+        }
+    }, [slug, slugToIndex]);
 
     const { title, description, images } = servicesData[activeIndex];
 
@@ -191,13 +216,16 @@ const ServiceHero = () => {
                             onClick={() => {
                                 setActiveIndex(idx);
                                 localStorage.setItem("serviceIndex", idx);
+                                navigate(`/services/${slugs[idx]}`);
                             }}
                             className={`flex items-center px-6 py-4 rounded-xl font-semibold text-lg transition border border-gray-300 hover:bg-[#2E3192] hover:text-white text-left ${idx === activeIndex
                                 ? "bg-[#2E3192] text-white"
                                 : "bg-gray-100 text-[#132870]"
                                 }`}
                         >
-                            {service.icon}
+                            {React.cloneElement(service.icon, {
+                                className: `${idx === activeIndex ? "text-white" : "text-[#2E3192]"} text-xl mr-2`
+                            })}
                             {service.title}
                         </button>
                     ))}
