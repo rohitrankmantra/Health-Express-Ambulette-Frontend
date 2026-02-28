@@ -8,17 +8,17 @@ const HomeACTPrivate = () => {
     {
       logo: <FaUserDoctor />,
       heading: "Doctors Appointments",
-      des: "Have an appointment with the doctor and need ambulette transportation to the clinic? Health Express Ambulette Inc.  staff will drive you to and back from your appointments."
+      des: "Have an appointment with the doctor and need ambulette service NYC or medical transportation NYC to the clinic? Health Express Ambulette Inc. staff will drive you to and back from your appointments."
     },
     {
       logo: <CiHospital1 />,
       heading: "Transfer Hospitals",
-      des: "You may need to move from one hospital to another for better treatment. Ambulance services are expensive, our private ambulette transportation is affordable."
+      des: "You may need to move from one hospital to another for better treatment. Ambulance services are expensive, our private NYC ambulette service and medical transportation NYC are affordable."
     },
     {
       logo: <CgCalendarDates />,
       heading: "Lab Tests",
-      des: "Have ongoing blood tests, MRI, and Catscan appointments? Once the doctor has set a schedule for you, ask the secretary to send it over to us."
+      des: "Have ongoing blood tests, MRI, and Catscan appointments? Once the doctor has set a schedule, ask the secretary to send it over to us for safe and comfortable ambulette services NYC and medical transportation services NYC."
     },
   ]
   return (
@@ -37,7 +37,7 @@ const HomeACTPrivate = () => {
         data-aos="fade-up"
         data-aos-delay="100"
       >
-        Schedule private ambulette transportation services for all your medical appointments.
+       Schedule private medical transportation services NYC for all your medical appointments.
       </p>
 
       {/* Cards */}

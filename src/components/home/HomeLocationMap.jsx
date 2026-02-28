@@ -16,7 +16,8 @@ const BrooklynMapSection = () => {
                         Ambulette Service Brooklyn
                     </h2>
                     <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                        Serving all of Brooklyn with professional ambulette transportation for doctor visits, hospital discharges, and non-emergency medical travel. Our team ensures reliable, safe, and compassionate care every time.
+                        Professional ambulette services NYC serving the whole of Brooklyn on doctor visits, hospital discharges, and non-emergency medical travel. Our staff guarantees quality, safe and caring service all the time.
+
                     </p>
                     <div className="flex items-center gap-2 text-[#132870] font-semibold">
                         <MapPin className="w-5 h-5" />

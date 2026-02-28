@@ -39,7 +39,8 @@ const HomeTransportation = () => {
                         <div className='w-[85%]'>
                             <h2 className='text-[2vh] md:text-[1.6vw] font-[700] text-[#132870]'>Specialized Support Service</h2>
                             <p className='md:text-[1.3vw] mt-2 text-[1.7vh] text-[#2E4583]'>
-                                We’ve been offering private luxury wheelchair medical transportation ambulette services since 2009 — ensuring professionalism, comfort, and care.
+                                We’ve been offering private luxury wheelchair medical transportation services NYC since 2009 — ensuring professionalism, comfort, and care.
+
                             </p>
                         </div>
                     </div>
@@ -52,7 +53,7 @@ const HomeTransportation = () => {
                         <div className='w-[85%]'>
                             <h2 className='text-[2vh] md:text-[1.6vw] font-[700] text-[#132870]'>State of Art Features</h2>
                             <p className='md:text-[1.3vw] mt-2 text-[1.7vh] text-[#2E4583]'>
-                                Our fleet is fully equipped with high top roofs, wheelchair lifts, special suspension, front and rear A/C & heating systems, and secure wheelchair locking mechanisms.
+                                Our fleet is fully equipped with high top roofs, wheelchair lifts, special suspension, front and rear A/C & heating systems, secure wheelchair locking mechanisms, and reliable NYC ambulette service and medical transportation NYC for all patient needs.
                             </p>
                         </div>
                     </div>

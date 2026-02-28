@@ -94,7 +94,7 @@ const AboutHero = () => {
             Making Expert <br /> Ambulette Services for All
           </h1>
           <p className="text-[1.8vh] md:text-[1.3vw] mt-4 text-white">
-            We provide reliable and comfortable non-emergency ambulette transportation services for medical appointments. We also accept Medicaid for non-emergency medical transport.
+            We provide reliable and comfortable ambulette service NYC and non-emergency ambulette transportation services for medical appointments. We also accept Medicaid for non-emergency medical transport.
           </p>
 
           <div className='w-[100%] md:flex items-center gap-5 mt-5'>

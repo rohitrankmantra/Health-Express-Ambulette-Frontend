@@ -21,19 +21,19 @@ const HomeServices = () => {
     const cardData = [
         {
             title: "Private Medical Transportation",
-            description: "Expert Ambulette Services specializes in luxury private ambulette transportation services.",
+            description: "Expert Ambulette Services specializes in luxury private NYC ambulette service and professional ambulette transportation services, ensuring safe and reliable medical transport",
             color: "#0D1D5B",
             icon: <FaUserMd />,
         },
         {
             title: "Medicaid Ambulette Transportation",
-            description: "Medicaid advantageous program that supports elderly & disabled patients to attend their doctor’s appointments.",
+            description: "Medicaid is an advantageous program that supports elderly & disabled patients with medical transportation services NYC to attend their doctor’s appointments.",
             color: "#E62E2D",
             icon: <MdLocalHospital />,
         },
         {
             title: "Two Men Assist Over Stairs",
-            description: "2 Men safely carry you over steps if you live on 2nd or 3rd floor building that has no elevator.",
+            description: "2 men safely carry you over steps if you live on the 2nd or 3rd floor building that has no elevator with our reliable NYC ambulette service.",
             color: "#91B956",
             icon: <GiStairs />,
         }
@@ -53,7 +53,8 @@ const HomeServices = () => {
                 data-aos="fade-up"
                 data-aos-delay="100"
             >
-                We take pride in our medical transportation <br className='md:block hidden' /> Ambulette services
+                We take pride in our medical transportation <br className='md:block hidden' /> Ambulette services NYC.
+
             </h1>
 
             <img
@@ -103,7 +104,7 @@ const HomeServices = () => {
                     Health Express Ambulette Inc.  transportation Fleet
                 </h2>
                 <p className='text-[1.7vh] md:text-[1.2vw] text-gray-700'>
-                    Providing reliable, safe, and comfortable rides for patients in need of transportation.
+                    Providing reliable, safe, and comfortable rides with professional medical transportation NYC for patients in need of transportation.
                 </p>
             </div>
         </div>
