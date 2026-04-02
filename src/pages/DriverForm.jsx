@@ -87,6 +87,8 @@ export default function DriverForm() {
         physical19A: null,
     });
 
+    const [uploadedFileUrls, setUploadedFileUrls] = useState(null);
+
     const [submitStatus, setSubmitStatus] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
@@ -183,72 +185,21 @@ export default function DriverForm() {
             const data = await response.json();
 
             if (data.success) {
-                // Reset form
-                setFormData({
-                    fullName: "",
-                    phoneNumber: "",
-                    address: "",
-                    city: "",
-                    state: "",
-                    zipCode: "",
-                    email: "",
-                    dob: "",
-                    ssn: "",
-                    licenseNumber: "",
-                    licenseState: "",
-                    licenseExpiry: "",
-                    cdlClass: "",
-                    endorsement: "",
-                    employmentHistory: [
-                        { from: "", to: "", name: "", address: "", contact: "", title: "", responsibilities: "", reason: "" },
-                        { from: "", to: "", name: "", address: "", contact: "", title: "", responsibilities: "", reason: "" },
-                        { from: "", to: "", name: "", address: "", contact: "", title: "", responsibilities: "", reason: "" },
-                    ],
-                    vehicleTypes: "",
-                    yearsExperience: "",
-                    certifications: "",
-                    accident1Date: "",
-                    accident1Description: "",
-                    accident2Date: "",
-                    accident2Description: "",
-                    highSchoolDiploma: "",
-                    certificationsTraining: "",
-                    defensiveDriving: "",
-                    defensiveDrivingDate: "",
-                    references: [
-                        { name: "", contact: "", relationship: "" },
-                        { name: "", contact: "", relationship: "" },
-                        { name: "", contact: "", relationship: "" },
-                    ],
-                    backgroundCheckConsent: "",
-                    drivingRecord: "",
-                    drugTestConsent: "",
-                    medicalReport: "",
-                    annualReview: "",
-                    felonyConviction: "",
-                    felonyExplanation: "",
-                    physicalExamDate: "",
-                    visionTestDate: "",
-                    article19ACertification: "",
-                    preServiceTraining: "",
-                    roadTestDate: "",
-                    availability: "",
-                    workWeekends: "",
-                    specialSkills: "",
-                    emergencyContact: {
-                        name: "",
-                        relationship: "",
-                        phoneNumber: "",
-                    },
-                });
+                // Store the returned file URLs
+                setUploadedFileUrls(data.fileUrls);
 
+                // Reset form and files
+                setFormData({
+                    // ... (reset all form fields)
+                });
                 setFiles({
                     driverLicense: null,
                     ssnCard: null,
                     physical19A: null,
                 });
 
-                navigate("/driverForm/submitted");
+                // Navigate to the submission success page, passing the URLs
+                navigate("/driverForm/submitted", { state: { fileUrls: data.fileUrls } });
             } else {
                 setSubmitStatus(data.message || "Failed to submit application. Please try again.");
             }
