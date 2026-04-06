@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaClock, FaEnvelope } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaClock, FaEnvelope, FaFacebook, FaInstagram } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import styles from "../../styles/SocialIcons.module.css";
 
 const GetInTouch = () => {
   useEffect(() => {
@@ -189,6 +190,39 @@ const GetInTouch = () => {
               Submit Now
             </button>
           </form>
+        </div>
+
+        {/* FOLLOW US SECTION */}
+        <div className="mt-16 text-center" data-aos="fade-up">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#132870] mb-6">Follow Us</h2>
+          <div className="flex justify-center">
+            <ul className={styles.socialList}>
+              <li>
+                <a 
+                  href="https://www.facebook.com/profile.php?id=61584198666363" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={`${styles.socialIcon} !text-[#2E3192] hover:!text-[#00AEEF]`}
+                  aria-label="Follow Health Express Ambulette on Facebook"
+                >
+                  <FaFacebook size={32} loading="lazy" />
+                  <span className={styles.visuallyHidden}>Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.instagram.com/healthexpressambulette/?fbclid=IwY2xjawRAaTZleHRuA2FlbQIxMQBicmlkETFzZmg0bHFBZlVhZ3lQYmxEc3J0YwZhcHBfaWQBMAABHpi_73toAH9Djfoclg-lvTbW_HykNHqpwF-QrFBAZ6Il3Nkj-Ic7EzeQsFgl_aem_CDfe94AD6IN5QpukZv-lDA" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={`${styles.socialIcon} !text-[#2E3192] hover:!text-[#00AEEF]`}
+                  aria-label="Follow Health Express Ambulette on Instagram"
+                >
+                  <FaInstagram size={32} loading="lazy" />
+                  <span className={styles.visuallyHidden}>Instagram</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

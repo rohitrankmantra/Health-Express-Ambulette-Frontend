@@ -1,0 +1,41 @@
+.socialIcon {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  color: #9ca3af; /* gray-400 */
+}
+
+.socialIcon:hover {
+  color: #60a5fa; /* blue-400 - meets WCAG 2.1 AA on black background */
+  transform: scale(1.1);
+}
+
+.socialIcon:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 4px;
+  color: #60a5fa;
+}
+
+.socialList {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

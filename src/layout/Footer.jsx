@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { PiFacebookLogoBold } from "react-icons/pi";
+import { FaMapMarkerAlt, FaFacebook, FaInstagram } from "react-icons/fa";
 import logo from "../assets/Logo.jpg";
+import styles from "../styles/SocialIcons.module.css";
 
 const Footer = () => {
   const navigate = useNavigate()
@@ -17,7 +17,7 @@ const Footer = () => {
               onClick={() => navigate('/')}
               src={logo}
               alt="Logo"
-              className="w-20 h-20 object-contain rounded-full"
+              className="w-20 h-20 object-contain rounded-full cursor-pointer"
             />
           </div>
           <p className="text-sm text-gray-300">
@@ -29,14 +29,35 @@ const Footer = () => {
             <FaMapMarkerAlt className="text-blue-400" />
             155 Water Street, Brooklyn NY 11201
           </p>
-          <div className="mt-4">
-            <Link
-              to="/facebook"
-              className="inline-flex items-center gap-2 text-blue-400 hover:text-white transition"
-            >
-              <PiFacebookLogoBold className="text-xl" />
-              <span className="text-sm">Follow on Facebook</span>
-            </Link>
+          
+          <div className="mt-6">
+            <h4 className="text-sm font-semibold mb-3 text-gray-300 uppercase tracking-wider">Follow Us</h4>
+            <ul className={styles.socialList}>
+              <li>
+                <a 
+                  href="https://www.facebook.com/profile.php?id=61584198666363" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.socialIcon}
+                  aria-label="Follow Health Express Ambulette on Facebook"
+                >
+                  <FaFacebook size={24} loading="lazy" />
+                  <span className={styles.visuallyHidden}>Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://www.instagram.com/healthexpressambulette/?fbclid=IwY2xjawRAaTZleHRuA2FlbQIxMQBicmlkETFzZmg0bHFBZlVhZ3lQYmxEc3J0YwZhcHBfaWQBMAABHpi_73toAH9Djfoclg-lvTbW_HykNHqpwF-QrFBAZ6Il3Nkj-Ic7EzeQsFgl_aem_CDfe94AD6IN5QpukZv-lDA" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.socialIcon}
+                  aria-label="Follow Health Express Ambulette on Instagram"
+                >
+                  <FaInstagram size={24} loading="lazy" />
+                  <span className={styles.visuallyHidden}>Instagram</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
